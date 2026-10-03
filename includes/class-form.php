@@ -13,7 +13,9 @@ class RHR_Form {
         add_shortcode('reservas', array(__CLASS__, 'shortcode'));
         add_action('init', array(__CLASS__, 'handle_post'));
         add_action('rest_api_init', array(__CLASS__, 'routes'));
-        add_action('wp_enqueue_scripts', array(__CLASS__, 'register_assets'));
+        // en init y no en wp_enqueue_scripts: los themes de bloques ejecutan el shortcode
+        // antes de ese hook, y wp_localize_script sobre un script sin registrar no hace nada
+        add_action('init', array(__CLASS__, 'register_assets'));
     }
 
     public static function register_assets() {

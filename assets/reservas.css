@@ -1,0 +1,42 @@
+/* Formulario de reservas: hereda tipografía y colores del theme; sólo define estructura. */
+.rhr { max-width: 640px; margin: 0 auto; }
+.rhr-form { display: grid; gap: 14px; }
+.rhr-form label { display: grid; gap: 6px; font-weight: 600; font-size: 0.95em; }
+.rhr-form input,
+.rhr-form select,
+.rhr-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 44px; /* área táctil cómoda en celulares */
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 400;
+  background: #fff;
+  color: inherit;
+}
+.rhr-form input:focus,
+.rhr-form select:focus,
+.rhr-form textarea:focus { outline: 2px solid currentColor; outline-offset: 1px; }
+.rhr-row { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.rhr-btn {
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.rhr-btn:hover { opacity: 0.9; }
+.rhr-total { margin: 0; font-weight: 600; }
+.rhr-ok,
+.rhr-error { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; }
+.rhr-ok { background: #e7f6ec; color: #0f5a23; }
+.rhr-error { background: #fbe9e9; color: #7a1414; }
+.rhr-error ul { margin: 0; padding-left: 18px; }
+/* trampa para bots: fuera de la vista, pero no display:none (algunos bots lo detectan) */
+.rhr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
